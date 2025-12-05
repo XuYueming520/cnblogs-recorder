@@ -25,8 +25,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Python script
+      - name: Run Python script fetch_blog_stats.py
         run: python scripts/fetch_blog_stats.py
+      
+      - name: Run Python script analyze_blog_stats.py
+        run: python scripts/analyze_blog_stats.py
 
       - name: Commit and push changes
         run: |
