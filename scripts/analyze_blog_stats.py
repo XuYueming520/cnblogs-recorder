@@ -12,6 +12,11 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 interested_dir = OUTPUT_DIR / "interested_blogs"
 interested_dir.mkdir(exist_ok=True)
 
+if datetime.now().day != 1:
+    # due to images stroage limitation, update images monthly
+    print('Skipped charts generation')
+    exit(0)
+
 files = sorted(DATA_DIR.glob(FILE_PATTERN))
 
 daily_data = {}
